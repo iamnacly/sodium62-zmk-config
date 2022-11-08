@@ -5,4 +5,4 @@ config SHIELD_SODIUM62_LEFT
 	def_bool $(shields_list_contains,sodium62_left)
 
 config SHIELD_SODIUM62_RIGHT
-	def_bool $(shields_list_contains,sodium2_right)
+	def_bool $(shields_list_contains,sodium62_right)
