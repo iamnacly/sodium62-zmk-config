@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/bt.h>
 #define TWO 1
 #define THREE 2
-
+#define GAME 3
 
 / {
         keymap {
@@ -58,7 +58,7 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 // | LCTL  | LGUI  | LALT |  GRAV |  | EQL | DEL | BKSP|  | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |   END |
                         bindings = <
-&kp C_MUTE   &kp C_VOL_DN    &kp C_VOL_UP    &none    &none    &none                       &none   &none  &none  &none  &none  &none
+&kp C_MUTE   &kp C_VOL_DN    &kp C_VOL_UP    &none    &none    &none                       &none   &none  &none  &none  &none  &to GAME
 &none  &kp C_PREV     &kp C_PP   &kp C_NEXT     &none    &none                       &none   &none  &none  &none  &none  &none
 &none &none     &none     &none     &none    &none                     &none   &trans &none  &none  &none  &none
 &none &none     &none     &none     &none     &none                    &none   &none  &none  &none  &none  &none
@@ -66,6 +66,21 @@
                                                                   
                         >;
                 };
-
+                GAME {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
+// |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |                   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// | LCTL  | LGUI  | LALT |  GRAV |  | EQL | DEL | BKSP|  | RET | SPC  | LBKT |  RBKT  | LBKT | HOME  |   END |
+                        bindings = <
+&kp ESC  &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp MINUS
+&kp TAB  &kp Q     &kp W     &kp E     &kp R     &kp T                        &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSLH
+&kp LCTRL &kp A     &kp S     &kp D     &lt TWO F     &kp G                        &kp H     &lt THREE J    &kp K     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B                        &kp N     &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL  &kp M  &kp M &kp GRAVE    &kp SPC  &kp SPC &kp R         &kp RET     &kp SPACE  &kp LBKT    &kp RBKT   &kp MINUS  &kp HOME   &to 0                                                                  
+                        >;
+                };
         };
+ 
 };
